@@ -44,7 +44,8 @@ def main():
     items = []
     with open(args.file, encoding="utf-8") as file:
         for line in file:
-            items.append(ItemToSort(line.strip()))
+            if line.strip():
+                items.append(ItemToSort(line.strip()))
 
     # sort the list
     items.sort()
